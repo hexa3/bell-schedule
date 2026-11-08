@@ -1,0 +1,29 @@
+{%- comment -%} 800x240: one row of class + countdown, then next-up and the day bar. {%- endcomment -%}
+<div class="layout layout--col layout--stretch bs bs--hh{% unless bs_show_bar %} bs-calm{% endunless %}">
+    <div class="bs-top">
+        <div class="bs-main">
+            <span class="label">{{ bs_kicker }}</span>
+            <div class="bs-headline">{{ bs_headline }}</div>
+            {%- if bs_detail != "" %}<span class="title">{{ bs_detail }}</span>{% endif %}
+        </div>
+        {%- if bs_big != "" %}
+        <div class="bs-count">
+            <span class="value value--xxlarge value--tnums">{{ bs_big }}</span>
+            <span class="label">{{ bs_unit }}</span>
+        </div>
+        {%- endif %}
+    </div>
+    {% if bs_show_bar %}
+    <div class="bs-progress">
+        {{ bs_bar }}
+        {%- if bs_next != "" %}<div class="bs-next"><span class="label label--inverted">{{ bs_next_label }}</span><span class="title title-small">{{ bs_next }}</span></div>{% endif %}
+    </div>
+    {%- elsif bs_next != "" %}
+    <div class="bs-next"><span class="label label--inverted">{{ bs_next_label }}</span><span class="title">{{ bs_next }}</span></div>
+    {%- endif %}
+</div>
+<div class="title_bar">
+    <img class="image" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a6 6 0 0 0-6 6v4.5L4 16v1h16v-1l-2-3.5V8a6 6 0 0 0-6-6zm-2.5 16.5a2.5 2.5 0 0 0 5 0z'/%3E%3C/svg%3E" alt="">
+    <span class="title">Bell Schedule</span>
+    <span class="instance">{{ bs_updated }}</span>
+</div>
