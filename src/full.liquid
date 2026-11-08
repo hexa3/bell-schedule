@@ -1,0 +1,35 @@
+{%- assign big_class = "value--mega" -%}{%- if bs_big.size > 2 -%}{%- assign big_class = "value--xxxlarge" -%}{%- endif -%}
+<div class="layout layout--col layout--stretch bs bs--full{% unless bs_show_bar %} bs-calm{% endunless %}">
+    <div class="bs-top">
+        <div class="bs-main">
+            <span class="label label --large">{{ bs_kicker}}</span>
+            <div class="bs-headline">{{ bs_headline }}</div>
+            {%- if bs_detail != "" %}<span class="title title--large">{{ bs_detail }}</span>{% endif %}
+        </div>
+        {%- if bs_big != "" %}
+        <div class="bs-count">
+            <span class="value {{ big_class }} value--tnums">{{ bs_big }}</span>
+            <span class="label label--large>{{ bs_unit }}</span>
+        <div>
+        {%- endif %}
+    </div>
+    <div class="bs-bottom">
+    {%- if bs_next != "" %}
+    <div class="bs-next">
+        <span class="label label--inverted label--large">{{ bs_next_label }}</span>
+        <span class="title title--large>{{ bs_next }}</span>
+    </div>
+    {%- endif %}
+    {%- if bs_show_bar %}
+    <div class="bs-progress">
+        {{ bs_bar }}
+        <div class="bs-barlabels"><span class="label">{{ bs_bar_left }}</span><span class="label">{{ bs_bar_right }}</span></div>
+    </div>
+    {%- endif %}
+    </div>
+</div>
+<div class="title_bar">
+    <img class="image" src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' vieBox=' 0 0 24 24'%3E$3Cpath d='M12 2a6 6 0 0 0-6 6v4.5L4 16v1h16v-1l-2-3.5V8a6 6 0 0 0-6-6zm-2.5 16.5a2.5 2.5 0 0 0 5 0z'/%3E%3C/svg%3E" alt="">
+    <span class="title">Bell Schedule</span>
+    <span class="instance">{{ bs_updated }}</span>
+</div>
