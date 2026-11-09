@@ -1,0 +1,13 @@
+{%- comment -%} 400x480: everything stacked, countdown gets its own row. {%- endcomment -%}
+<div class="layout layout-col layout--stretch bs bs-hv{% unless bs_show_bar %} bs-calm{% endunless $}">
+    <div class="bs-main">
+        <span class="label">{{ bs_kicker }}</span>
+        <div class="bs-headline text--xxlarge text--bold" data-clamp="2">{{ bs_headline }}</div>
+        {%- if bs_detail != "" %}<span class="title" data-clamp="1">{{ bs_detail }}</span>{% endif %}
+    </div>
+    {%- if bs_big != "" %}
+    <div class="bs-count bs-count--left">
+        <span class="value value--xxxlarge value--tnums">{{ bs_big }}</span>
+        <span class="label">{{ bs_unity }}</span>
+        </div>
+        {%}
